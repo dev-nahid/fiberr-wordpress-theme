@@ -37,6 +37,8 @@ function fiberr_customize_register( $wp_customize ) {
 	 * 			ADD THEME OPTIONS 
 	 * =================================
 	 */
+
+	 // Footer background color option inset into existing colors section
 	$wp_customize->add_setting( 'footer_bgcolor', array(
 		'default'	=> '#fff',
 		'transport'	=> 'refresh',
@@ -47,6 +49,45 @@ function fiberr_customize_register( $wp_customize ) {
 		'section'	=> 'colors',
 	 )) );
 
+	// General Gettings
+	$wp_customize->add_setting( 'featured_disable' , array());
+	$wp_customize->add_control( 'featured_disable' , array(
+		'label'	=> __( 'Disable Featured Section' , 'fiberr' ),
+		'section' => 'general',
+		'type'	=> 'checkbox',
+
+	));
+
+	$wp_customize->add_setting( 'blog_styles' , array());
+	$wp_customize->add_control( 'blog_styles' , array(
+		'label'	=> __( 'Blog Styles' , 'fiberr' ),
+		'section' => 'general',
+		'type'	=> 'select',
+		'choices' => array(
+			'default' => 'Default',
+			'one-column' => 'One Column',
+			'three-column' => 'Three Column',
+		)
+
+	));
+	$wp_customize->add_setting( 'sidebar_position' , array());
+	$wp_customize->add_control( 'sidebar_position' , array(
+		'label'	=> __( 'Sidebar Postion' , 'fiberr' ),
+		'section' => 'general',
+		'type'	=> 'radio',
+		'choices' => array(
+			'left' => 'Left',
+			'right'	=> 'Right',
+			'hide' => 'Hide',
+		),
+	));
+
+
+	$wp_customize->add_section( 'general' , array(
+		'title' => __( 'General Settings' , 'fiberr' ),
+		'priority' => 10,
+
+	));
 
 	 
 }
