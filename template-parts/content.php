@@ -1,65 +1,74 @@
 <?php
 /**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * SINGLE CONTENT 
+ * 
+ * Featured, Blog list, Single post. All type of post item will be display 
  *
  * @package Fiberr
  */
 
 ?>
+  <article id="post-<?php the_ID(); ?>" <?php
+      if( is_singular() ) :
+        post_class( 'one-column' );
+      else : post_class( 'two-column' );
+      endif;
+    ?>> 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<a class="post-thumbnail mb-md-3" href="<?php the_permalink(); ?>">
-		<?php the_post_thumbnail(); ?>
-		</a>
-	<header class="post-header">
-		<div class="post-category py-2">
-			<span>Freelancer Tips</span>
-		</div>
-		<?php
-			if ( is_singular() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
-		?>
-		<div class="post-meta">
-			<span class="author-name"><a href="#"><?php the_author(); ?></a></span>
-			<span class="pipe">|</span>
-		<time class="post-date"><?php echo get_the_date(); ?></time>
-		</div>
-	</header>
-	<div class="post-content d-none d-md-block">
-	<?php
+    <header class="entry-header">
+      <h1 class="entry-title"><?php the_title(); ?></h1>
+      <div class="entry-meta">
+        <div class="author-img">
+         <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+        </div>
+        <div class="author-wrap">
+          <span class="author vcard"><?php the_author_link(); ?></span>
+          <a href="#/" rel="bookmark"><time class="entry-date published"><?php echo get_the_date(); ?></time></a>
+        </div>
+      </div><!-- .entry-meta -->
+    </header><!-- .entry-header -->
 
-	if ( is_home() ) : 
-		the_excerpt();
-		else : 
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'fiberr' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-	endif;
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fiberr' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div>
-	<footer class="post-footer">
-	<?php //fiberr_entry_footer(); ?>
-	</footer>
-</article><!-- #post-<?php the_ID(); ?> -->
+    <!-- Post thumbnail -->
+    <?php fiberr_post_thumbnail() ?>
+
+    <div class="entry-content">
+      <?php
+      the_content(
+        sprintf(
+          wp_kses(
+            /* translators: %s: Name of current post. Only visible to screen readers */
+            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'fiber' ),
+            array(
+              'span' => array(
+                'class' => array(),
+              ),
+            )
+          ),
+          wp_kses_post( get_the_title() )
+        )
+      );
+
+      wp_link_pages(
+        array(
+          'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fiber' ),
+          'after'  => '</div>',
+        )
+      );
+      ?>
+    </div><!-- .entry-content -->
+    <?php
+      if( is_singular() ) :
+        ?>
+        <footer class="entry-footer">
+          <div class="author-img">
+          <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+          </div>
+          <div class="author-about">
+            <h4><?php the_author(); ?></h4>
+            <p><?php the_author_description(  ); ?></p>
+          </div> 
+        </footer><!-- .entry-footer -->
+        <?php
+        endif;
+    ?>
+  </article>

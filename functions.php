@@ -133,6 +133,7 @@ add_action( 'wp_enqueue_scripts', 'fiberr_scripts' );
  * Implement Theme Option from customize API
  */
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 
 
