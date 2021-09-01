@@ -22,8 +22,8 @@ function fiberr_custom_header_setup() {
 		apply_filters(
 			'fiberr_custom_header_args',
 			array(
-				'default-image'      => '',
 				'default-text-color' => '000000',
+				'default-image'      => '',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,

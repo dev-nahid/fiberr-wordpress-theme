@@ -21,7 +21,7 @@
                     <li><a href="#"><i class="fab fa-pinterest-p"></i> </a> </li>
                     <li><a href="#"><i class="fab fa-linkedin-in"></i> </a> </li>
                   </ul>
-                  <p class="footer-copyright">© 2021 Helal Hossain. Made With Love by Themesindustry</p>
+                  <p class="footer-copyright">© 2021 copyright content will be here</p>
                 </div>
             </div>
         </div>

@@ -115,7 +115,7 @@ function fiberr_scripts() {
 	wp_style_add_data( 'fiberr-style', 'rtl', 'replace' );
 	
 	// CSS 
-	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.15.3/css/all.css', array(), _S_VERSION );
+	wp_enqueue_style( 'fontawesome', '//use.fontawesome.com/releases/v5.15.3/css/all.css', array(), _S_VERSION );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'fiberr-main', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION );
 
@@ -133,6 +133,10 @@ add_action( 'wp_enqueue_scripts', 'fiberr_scripts' );
  * Implement Theme Option from customize API
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Template tags include
+ */
 require get_template_directory() . '/inc/template-tags.php';
 
 

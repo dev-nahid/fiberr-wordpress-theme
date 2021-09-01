@@ -14,7 +14,7 @@ get_header();
         <div class="container">
           <div class="theme-center-wrap">
             <div class="theme-center-left">
-              <!-- SINGLE POST SECTION  -->
+              <!-- SINGLE POST -->
               <section class="single-post-section border">
                 <div class="one-column-wrap single-post">
                   <?php 
@@ -31,7 +31,7 @@ get_header();
           </div> <!-- .theme-center-right -->
 
 
-          <!-- RELATED POST SECTION -->
+          <!-- RELATED POST -->
           <div class="relative-post-wrap">
             <div class="theme-section-header">
               <h2>You might like</h2>
@@ -58,8 +58,7 @@ get_header();
                     </div><!-- .entry-content -->
                     <footer class="entry-footer">
                               
-                    </footer><!-- .entry-footer -->
-            <!-- You can't add class above the code -->        
+                    </footer><!-- .entry-footer -->      
                   </article>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
