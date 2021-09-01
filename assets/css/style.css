@@ -25,6 +25,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -371,7 +372,7 @@ body.shadow:after {
   font-weight: 300;
 }
 
-.one-column-wrap .one-column {
+.one-column-wrap article {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -379,13 +380,13 @@ body.shadow:after {
   padding-bottom: 20px;
 }
 
-.one-column .post-thumbnail {
+.one-column-wrap article .post-thumbnail {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
 }
 
-.one-column .post-thumbnail img {
+.one-column-wrap article .post-thumbnail img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -425,7 +426,7 @@ body.shadow:after {
 /* =========== End Post Common Style========== */
 
 /* =========== Start Feature Post Style========== */
-.feature-post .one-column {
+.feature-post article {
   position: relative;
   display: flex;
   justify-content: center;
@@ -443,7 +444,7 @@ body.shadow:after {
   margin-bottom: 0;
 }
 
-.feature-post .post-thumbnail img {
+.feature-post article .post-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -471,6 +472,9 @@ body.shadow:after {
 /* =========== Start Recent Section Style========== */
 
 /* =========== Start Center Section Style========== */
+.theme-center-section {
+  padding-top: 60px;
+}
 
 .theme-center-section .theme-center-wrap {
   display: flex;
@@ -478,7 +482,7 @@ body.shadow:after {
 }
 
 .theme-center-wrap .theme-center-right {
-  min-width: 27%;
+  max-width: 30%;
   padding: 0 30px;
 }
 
@@ -533,19 +537,18 @@ body.shadow:after {
 /* =========== End Footer Style========== */
 
 /* =========== Start Single Post Style========== */
+.single-post {
+  padding-bottom: 40px;
+}
 
 .relative-post-wrap {
   padding: 60px 0 40px;
 }
 
-.single-post-section .entry-title {
+.single-post .entry-title {
   font-size: 48px;
   line-height: 57px;
   margin-bottom: 0;
-}
-
-.relative-post .entry-title {
-  font-size: 1rem;
 }
 
 .single-post .entry-meta {
@@ -576,18 +579,18 @@ body.shadow:after {
   margin-bottom: 9px;
 }
 
-.single-post .post-thumbnail {
+.single-post article .post-thumbnail {
   width: 100%;
   height: 350px;
   margin-bottom: 30px;
 }
 
-.single-post .post-thumbnail img {
+.single-post article .post-thumbnail img {
   display: inline-block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 .single-post .entry-content {
@@ -597,6 +600,8 @@ body.shadow:after {
 .single-post .entry-content p {
   margin-bottom: 25px;
   font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.4px;
 }
 
 .single-post .entry-content a {
@@ -650,14 +655,14 @@ body.shadow:after {
   padding-bottom: 45px;
 }
 
-.category-post .one-column {
+.category-post article {
   padding-bottom: 80px;
 }
 
 /* =========== End Category Post Style========== */
 
 /* =========== Start Search Results Post Style========== */
-.search-post .one-column {
+.search-post article {
   display: flex;
   align-items: center;
   padding-bottom: 50px;
@@ -668,7 +673,7 @@ body.shadow:after {
   height: 200px;
 }
 
-.search-post .post-thumbnail img {
+.search-post article .post-thumbnail img {
   width: 300px;
   height: 100%;
   border-radius: 0;
@@ -701,7 +706,7 @@ body.shadow:after {
 
 /* =========== Start Responsive Style========== */
 @media (max-width: 991.98px) {
-  .feature-post .one-column {
+  .feature-post article {
     flex-direction: column;
     padding: 40px 0 35px 0;
   }
@@ -735,7 +740,7 @@ body.shadow:after {
     line-height: 57px;
   }
 
-  .category-post .one-column {
+  .category-post article {
     padding-bottom: 35px;
   }
 
@@ -766,11 +771,11 @@ body.shadow:after {
     line-height: 43px;
   }
 
-  .recent-post .one-column {
+  .recent-post article {
     display: flex;
   }
 
-  .recent-post .one-column .post-thumbnail {
+  .recent-post article .post-thumbnail {
     margin-bottom: 0px;
     padding: 18px 20px 10px 0;
   }
@@ -813,8 +818,13 @@ body.shadow:after {
     grid-row: span 1;
   }
 
-  .category-post .one-column {
+  .category-post article {
     padding-bottom: 20px;
+  }
+
+  .blog-post article,
+  .category-post article {
+    margin-bottom: 16px;
   }
 }
 
@@ -837,7 +847,7 @@ body.shadow:after {
     margin-top: 110px !important;
   }
 
-  .feature-post .one-column {
+  .feature-post article {
     padding-top: 20px;
   }
 
@@ -862,7 +872,7 @@ body.shadow:after {
     margin-bottom: 0;
   }
 
-  .search-post .one-column {
+  .search-post article {
     display: inline-block;
     padding-bottom: 40px;
   }
