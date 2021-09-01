@@ -1,12 +1,17 @@
 <?php
 /**
  * The main template file
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> 8be673f08c04f903a14e0b983ef7e05d7902df86
  * @package Fiberr
  */
 
 get_header();
 ?>
+<<<<<<< HEAD
 
  <main style="margin-top: 80px;">
     <div class="theme-main-wrap">
@@ -27,6 +32,25 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum autem, fugi
     </div> <!-- .theme-main-wrap -->
   </main><!-- Main Section -->
 
+=======
+<main style="margin-top: 80px;">
+  <div class="theme-main-wrap">
+      <?php get_template_part( 'template-parts/content', 'featured' ); ?>
+      <div class="theme-center-section">
+        <div class="container">
+          <div class="theme-center-wrap">
+            <div class="theme-center-left">
+              <?php get_template_part( 'template-parts/content' , 'blog'); ?>
+              <?php //get_template_part( 'template-parts/content' , 'news'); ?>
+              <?php //get_template_part( 'template-parts/content' , 'business'); ?>
+            </div>
+              <?php get_sidebar(); ?>
+          </div>
+        </div><!-- .container -->
+      </div>      
+  </div>
+</main><!-- End Main Section -->
+>>>>>>> 8be673f08c04f903a14e0b983ef7e05d7902df86
 <?php
 
 get_footer();
